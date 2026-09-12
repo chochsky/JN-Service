@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JN Service</title>
+  
+  <!-- Google Fonts: Inter & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+
+    <nav>
+      <div class="logo">
+  <span>JN</span> Service
+</div>
+      <a href="#selector" class="nav-link">მონაცემთა ბაზა</a>
+      <a href="#services" class="nav-link">სერვისები</a>
+      <a href="#evacuator" class="btn-tow pulse">🚨 ევაკუატორი 24/7</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-badge">⚡ ინტელექტუალური ავტო სერვისი</div>
+    <h1>პროფესიონალური ავტო ელექტრონობა & ტუნინგი</h1>
+    <p>გასაღებების დაპროგრამება, აკუმულატორები, Stage 1/2 ჩაწერა და ევაკუაცია</p>
+    <a href="#evacuator" class="hero-btn">
+      <span>📍 SOS - ევაკუატორის გამოძახება</span>
+    </a>
+  </section>
+
+  <!-- Vehicle Selector Section -->
+  <section id="selector" class="container">
+    <div class="section-title">
+      <h2>მანქანის პარამეტრების შემოწმება</h2>
+      <p>აირჩიე ავტომობილი და მიიღე ზუსტი ტექნიკური მონაცემები</p>
+    </div>
+
+    <div class="glass-card filter-card">
+      <div class="filter-box">
+        <div class="input-group">
+          <label for="makeSelect">ავტომობილის მარკა</label>
+          <select id="makeSelect" onchange="updateModels()">
+            <option value="">-- აირჩიე მარკა --</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="modelSelect">მოდელი</label>
+          <select id="modelSelect" disabled>
+            <option value="">-- ჯერ აირჩიე მარკა --</option>
+          </select>
+        </div>
+
+        <button class="btn-search" onclick="searchCarData()">
+          🔍 მონაცემების ძებნა
+        </button>
+      </div>
+    </div>
+
+    <!-- Output Data Card -->
+    <div id="resultCard" class="glass-card result-card hidden">
+      <div class="card-header">
+        <h3 id="carTitle">BMW F30 328i</h3>
+        <span class="status-badge">✔ გადამოწმებული მონაცემი</span>
+      </div>
+      
+      <div class="data-grid">
+        <div class="data-item">
+          <div class="icon-box">🔋</div>
+          <div>
+            <h4>აკუმულატორი</h4>
+            <p id="batteryData">-</p>
+          </div>
+        </div>
+
+        <div class="data-item">
+          <div class="icon-box">🔑</div>
+          <div>
+            <h4>გასაღები & ჩიპი</h4>
+            <p id="keyData">-</p>
+          </div>
+        </div>
+
+        <div class="data-item highlight">
+          <div class="icon-box">⚡</div>
+          <div>
+            <h4>Stage 1 კალიბრაცია</h4>
+            <p id="stageData">-</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Evacuator SOS Section -->
+  <section id="evacuator" class="container">
+    <div class="glass-card evacuator-card">
+      <h2>🚨 ევაკუატორის 24/7 გამოძახება</h2>
+      <p>გაუზიარე შენი ზუსტი GPS ლოკაცია ოპერატორს WhatsApp-ში 1 დაჭერით:</p>
+      <button class="sos-btn" onclick="sendLocation()">
+        <span>📍 ჩემი ლოკაციის გაგზავნა (WhatsApp)</span>
+      </button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
